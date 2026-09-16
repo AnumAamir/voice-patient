@@ -214,3 +214,12 @@ The complete voice-to-database registration flow has been tested successfully:
 **Phone call → Vapi → FastAPI → PostgreSQL → Patient record**
 
 The REST API endpoints and voice registration flow are operational.
+
+## Limitations and Improvements
+- The REST API currently does not implement authentication or authorization. For a production deployment, appropriate access controls, role-based permissions, and secure authentication would be required to protect patient data.
+- Patient data can currently be retrieved, created, updated, and soft-deleted through the REST API. A dedicated web-based interface could provide a more user-friendly way for authorized staff to manage patient records.
+- Adding unit and integration tests would help verify individual components, catch regressions early, and make future changes safer and more reliable.
+- A production version could include structured logging, audit trails for patient-data changes, monitoring, and alerting to make system behavior easier to track and troubleshoot.
+- Additional validation and duplicate-patient detection could be introduced to reduce data-entry errors and prevent accidental creation of duplicate records.
+- A real healthcare deployment would require additional security and privacy controls, including encryption, stricter access controls, secure secret management, data-retention policies, and compliance with applicable healthcare and privacy regulations.
+- The application could be further improved with database indexing, connection-pool tuning, rate limiting, centralized error handling, and production-oriented backup and recovery strategies.
